@@ -1,0 +1,49 @@
+.textarea { 
+    all: unset;  
+}
+.form-input-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.form-input-title  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    pointer-events: none;
+}
+.form-input-title  h5 {
+    pointer-events: none;
+}
+.textarea-wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+.textarea-wrap textarea {
+    min-width: 300px;
+    min-height: 100px;
+    max-width: 300px;
+    max-height: 100px;
+}
+
+.send-btn::before {
+    font-size: 40px;
+    content: '\2192';
+    position: absolute;
+    top: 43%;
+    right: 5%;
+    padding: 0 5px 10px 5px;
+    border: 1px solid;
+    border-radius: 50%;
+    cursor: pointer;
+}

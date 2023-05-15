@@ -1,0 +1,21 @@
+.note-renew-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10%;
+    align-items: center;
+}
+
+.note-renew-title {
+    font-size: 30px;
+    padding-right: 20px;
+}
+
+.note-renew-icon::before {
+    content: '\1F5D8';
+    font-size: 30px;
+    border: 1px solid;
+    padding: 4px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}

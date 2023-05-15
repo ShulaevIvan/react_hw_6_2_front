@@ -1,23 +1,50 @@
-import logo from './logo.svg';
+import React from 'react';
+
 import './App.css';
+import './components/formInput/FormInput.css';
+import './components/note/Note.css';
+import './components/noteRenew/NoteRenew.css';
+
+import FormInput from './components/formInput/FormInput';
+import Note from './components/note/Note';
+import NoteRenew from './components/noteRenew/NoteRenew';
 
 function App() {
+  const data = [
+    {
+      id: 1,
+      content: 'test sfsfd serser serser ser ser ser ser test sfsfd serser serser ser ser ser ser test sfsfd serser serser ser ser ser ser',
+    },
+    {
+      id: 1,
+      content: 'test sfsfd serser serser ser ser ser ser',
+    },
+    {
+      id: 1,
+      content: 'test sfsfd serser serser ser ser ser ser',
+    },
+    {
+      id: 1,
+      content: 'test sfsfd serser serser ser ser ser ser',
+    }
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NoteRenew></NoteRenew>
+      <div className='notes-wrap'>
+        <div className='notes-row'>
+          {data.map((item) => {
+            return  (
+              <React.Fragment>
+                <Note {...item}></Note>
+              </React.Fragment>
+            )
+          })}
+        </div>
+      </div>
+      
+        <FormInput></FormInput>
+     
     </div>
   );
 }

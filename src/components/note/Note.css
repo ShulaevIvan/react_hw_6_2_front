@@ -1,0 +1,35 @@
+.notes-wrap {
+    margin-top: 5%;
+}
+.note-wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    min-width: 30%;
+    max-width: 250px;
+    min-height: 150px;
+    border: 1px solid;
+    margin-right: 2%;
+    margin-bottom: 20px;
+}
+.rm-note-btn::before {
+    position: absolute;
+    top: -20px;
+    padding: 0 5px;
+    font-size: 30px;
+    right: -15px;
+    border: 1px solid;
+    border-radius: 50%;
+    content: '\2716';
+    cursor: pointer;
+}
+.notes-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.note-content p  {
+    padding: 10px;
+}
