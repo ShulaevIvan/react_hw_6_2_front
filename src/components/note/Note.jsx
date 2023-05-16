@@ -5,7 +5,7 @@ const Note = (props) => {
     return (
         <React.Fragment>
             <div className="note-wrap">
-                <span className="rm-note-btn"></span>
+                <span className="rm-note-btn" onClick={() => {props.rmEvent(props.id)}}></span>
                 <div className="note-body">
                     <div className="note-content">
                         <p>{props.content}</p>
