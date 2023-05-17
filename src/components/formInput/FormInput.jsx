@@ -14,6 +14,7 @@ const FormInput = (props) => {
     }
 
     const [inputState, setInputState] = useState(initialState);
+    const [renewState, setRenewState] = useState({renewReq: false,});
 
     const sendBtnHandler = async () => {
         if (inputState.inputRef.current.value.trim() === '') return;
@@ -27,6 +28,10 @@ const FormInput = (props) => {
             },
         }).then(() => {
             inputState.inputRef.current.value = '';
+            setRenewState(prevState => ({
+                ...prevState,
+                renewReq : true,
+            }));
         })
     }
 
@@ -41,7 +46,12 @@ const FormInput = (props) => {
         setInputState(prevState => ({
             ...prevState,
             notesData: prevState.notesData.filter((item) => item.id !== id)
-        })) 
+        }));
+        setRenewState(prevState => ({
+            ...prevState,
+            renewReq : true,
+        }));
+        
     }
 
     const renewBtnHandler = async () => {
@@ -59,6 +69,11 @@ const FormInput = (props) => {
                 notesData: [...data.notes]
             }));
         });
+
+        setRenewState(prevState => ({
+            ...prevState,
+            renewReq : true,
+        }));
     }
 
     useEffect(() => {
@@ -93,7 +108,7 @@ const FormInput = (props) => {
                 notesData: [...data.notes]
             }));
         });
-    }, [inputState])
+    }, [renewState])
    
 
     return (
